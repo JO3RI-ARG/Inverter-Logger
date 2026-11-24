@@ -20,6 +20,7 @@
 
 //define the DS1307
 #define RTC_ADDRESS                  0x68
+#define RTC_FORCE_SET                0       // 1 for ONE upload sets the clock to the compile time, then back to 0
 #define STAMP_SIZE                   20   // "YYYY-MM-DD HH:MM:SS" + 0
 
 //define the serial port (only with an FTDI cable, pins 0/1 are for RS-232 later)

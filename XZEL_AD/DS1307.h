@@ -57,9 +57,9 @@ void rtcBegin()
     rtcOk = FALSE;
     return;
   }
-  if (!rtcRead())                                // halted (new chip or battery was out)
+  if (RTC_FORCE_SET || !rtcRead())               // forced, or halted (new chip or battery was out)
   {
-    Serial.println(F("RTC halted: set from compile time"));
+    Serial.println(F("RTC set from compile time"));
     rtcSetFromCompileTime();
   }
   rtcOk = rtcRead();
