@@ -16,6 +16,12 @@ bool sdBegin()
   return sdOk;
 }
 
+// open for appending; the caller writes and closes (nothing is lost when the power drops)
+File sdOpen(const char *name)
+{
+  return SD.open(name, FILE_WRITE);
+}
+
 // open, write, close every time: nothing is lost when the power drops
 bool sdWriteLine(const char *line)
 {
